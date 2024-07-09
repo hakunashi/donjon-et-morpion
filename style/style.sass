@@ -14,6 +14,7 @@ a
 body
     font-family: 'Public Pixel', sans-serif
     background-color: #f0f0f0
+    overflow: hidden
 
     main
         display: flex
@@ -40,8 +41,11 @@ body
                 div#perso1
                     width: 180px
                     height: 300px
+                    margin-left: -130%
                     background-color: #333333
                     border-radius: 95%
+                    animation: slide-in 5s forwards, bounce 5s forwards infinite
+                    // animation: slide-out 5s forwards
             section#enemy-side
                 width: 49%
                 height: 97%
@@ -83,3 +87,23 @@ body
                         a:hover
                             background-color: #636363
                             border: 2px dashed white
+
+@keyframes slide-in
+    0%
+        transform: translateX(-130%)
+    100%
+        transform: translateX(300%)
+    
+@keyframes slide-out
+    0%
+        transform: translateX(0%)
+    100%
+        transform: translateX(770%)
+        display: none
+@keyframes bounce
+    0%
+        transform: translateX(10px)
+    50%
+        transform: translateX(-10px)
+    100%
+        transform: translateX(10px)
