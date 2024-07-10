@@ -8,7 +8,8 @@ export class Skill {
 
   makeDamage(atk) {
     return Math.floor(
-      (Math.random() * (maxDamage - minDamage) + minDamage) * (atk * 0.1)
+      (Math.random() * (this.maxDamage - this.minDamage) + this.minDamage) *
+        (atk * 0.1)
     );
   }
 }

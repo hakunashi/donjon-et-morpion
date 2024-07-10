@@ -1,6 +1,6 @@
 import { Character } from "./class/Character.js";
 import { Ally } from "./class/Ally.js";
-import { Ennemy } from "./class/Ennemy.js";
+import { Enemy } from "./class/Enemy.js";
 import { Item } from "./class/Item.js";
 import { Skill } from "./class/Skill.js";
 import { State } from "./class/State.js";
@@ -10,24 +10,42 @@ export const ITEMS = {
   "potion de mana": new Item("Rend un montant de mana", "mana", 30),
 };
 
+export const ATTAQUE = new Skill("attaque", 5, 10, 0);
+
 export const SKILLS = {
-  attaque: new Skill("attaque", 5, 11, 0),
   "attaque magique": new Skill("attaque magique", 11, 20, 15),
   "attaque magique instable": new Skill("attaque magique", 4, 28, 25),
 };
 
 export const MAIN = new Ally(
+  "./img",
   "Basile",
   {
     PV: 100,
-    mana: 70,
-    atk: 10,
+    actualPV: 100,
+    mana: 50,
+    actualMana: 50,
+    atk: 16,
     def: 5,
     spd: 11,
   },
-  [SKILLS["attaque"]],
+  [SKILLS["attaque magique"]],
   [
     { quantity: 1, potionDeSoin: ITEMS["potion de soin"] },
     { quantity: 1, potionDeMana: ITEMS["potion de mana"] },
   ]
+);
+
+export const ENEMY = new Enemy(
+  "./img",
+  "Isaac",
+  {
+    PV: 140,
+    actualPV: 140,
+    atk: 5,
+    def: 7,
+    spd: 8,
+  },
+  [ATTAQUE, SKILLS["attaque magique"]],
+  [{ quantity: 1, potionDeSoin: ITEMS["potion de soin"], taux: 40 }]
 );

@@ -1,8 +1,8 @@
 import { Character } from "./Character.js";
 
 export class Ally extends Character {
-  constructor(name, stats, skills, items) {
-    super(name, stats, skills);
+  constructor(img, name, stats, skills, items) {
+    super(img, name, stats, skills);
     this.items = items;
   }
 }
