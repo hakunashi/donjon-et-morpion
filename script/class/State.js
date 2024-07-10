@@ -1,4 +1,4 @@
-class State {
+export class State {
   constructor(name, duration, damage) {
     this.name = name;
     this.duration = duration;

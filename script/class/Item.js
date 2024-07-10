@@ -1,8 +1,7 @@
-class Item {
-  constructor(name, description, ressource, heal) {
-    this.name = name;
+export class Item {
+  constructor(description, ressource, amount) {
     this.description = description;
     this.ressource = ressource;
-    this.heal = heal;
+    this.amount = amount;
   }
 }

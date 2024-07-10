@@ -1,4 +1,4 @@
-class Character {
+export class Character {
   constructor(name, stats, skills) {
     this.name = name;
     this.stats = stats;
