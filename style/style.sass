@@ -32,35 +32,41 @@ body
             align-items: center
             width: 99%
             height: 58%
-            background-color: red
+            background-image: url("../imgs/bg.webp")
+            background-size: cover
+            background-position: bottom
             section#ally-side
                 width: 49%
                 height: 97%
                 display: flex
                 flex-direction: column
-                background-color: green
+                // background-color: green
                 div#ally-hud
                     height: 50px
                     margin: 10px
                     display: flex
                     align-items: center
-                    background-color: blueviolet
+                    // background-color: blueviolet
+                    border: 2px solid white
                     border-radius: 5px
                     div.pv
                         width: 40%
                         display: flex
                         align-items: center
                         justify-content: space-around
+                        color: white
                         div.health
                             display: flex
-                            img
+                            img#health-hearth
                                 width: 20px
                                 margin-right: 5px
+                                animation: pulse 1s infinite
                         div#mana
                             display: flex
                             img
                                 width: 20px
                                 margin-right: 5px
+                                animation: shake 1.5s infinite
                     div#status
                         width: 60%
                         display: flex
@@ -71,12 +77,13 @@ body
                             display: flex
                             justify-content: space-around
                             align-items: center
-                            background-color: red
+                            background-color: #333333
                             margin: 50px
                             padding: 10px
                             border-radius: 5px
                             p
                                 font-size: 14px
+                                color: white
                 div#perso1
                     margin: 0 auto
                     margin-top: 15vh
@@ -84,32 +91,46 @@ body
                     height: 300px
                     background-color: #333333
                     border-radius: 95%
-                    animation: slide-in 5s forwards, bounce 1.5s 5s infinite
+                    animation: slide-in-perso-1 5s forwards, bounce-player-1 1.5s 5s infinite
                     // animation: slide-out 5s forwards
             section#enemy-side
                 width: 49%
                 height: 97%
                 display: flex
                 flex-direction: column
-                background-color: yellow
+                // background-color: yellow
                 div#enemy-hud
                     width: 40%
                     height: 50px
-                    margin: 10px auto
+                    margin-top: 10px
+                    margin-left: 28.5vw
                     display: flex
                     align-items: center
-                    background-color: blueviolet
+                    justify-content: right
+                    // background-color: blueviolet
+                    border: 2px solid white
                     border-radius: 5px
                     div.pv
                         width: 100%
                         display: flex
                         align-items: center
                         justify-content: space-around
+                        color: white
                         div.health
                             display: flex
-                            img
+                            img#health-hearth
                                 width: 20px
                                 margin-right: 5px
+                                animation: pulse 1s infinite
+                div#perso2
+                    margin: 0 auto
+                    margin-top: 15vh
+                    width: 180px
+                    height: 300px
+                    background-color: #333333
+                    border-radius: 95%
+                    animation: slide-in-perso-2 5s forwards, bounce-player-2 1.5s 5s infinite
+                    // animation: slide-out 5s forwards
         div#hud
             display: flex
             justify-content: space-evenly
@@ -147,22 +168,55 @@ body
                             background-color: #636363
                             border: 2px dashed white
 
-@keyframes slide-in
+@keyframes slide-in-perso-1
     0%
         transform: translateX(-50vw)
     100%
         transform: translateX(0)
-    
+@keyframes slide-in-perso-2
+    0%
+        transform: translateX(50vw)
+    100%
+        transform: translateX(0)
 @keyframes slide-out
     0%
         transform: translateX(0%)
     100%
         transform: translateX(770%)
         display: none
-@keyframes bounce
+@keyframes bounce-player-1
     0%
         transform: translateX(0px)
     50%
         transform: translateX(-15px)
     100%
         transform: translateX(0px)
+@keyframes bounce-player-2
+    0%
+        transform: translateX(0px)
+    50%
+        transform: translateX(15px)
+    100%
+        transform: translateX(0px)
+@keyframes pulse
+    0%
+        scale: 1
+    50%
+        scale: 1.1
+    100%
+        scale: 1
+@keyframes shake
+    0%
+        transform: rotate(0deg)
+    15%
+        transform: rotate(10deg)
+    25%
+        transform: rotate(-10deg)
+    35%
+        transform: rotate(10deg)
+    45%
+        transform: rotate(-10deg)
+    50%
+        transform: rotate(0deg)
+    100%
+        transform: rotate(0deg)
