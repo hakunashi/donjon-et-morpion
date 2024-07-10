@@ -155,17 +155,49 @@ body main div#hud {
   align-items: center;
   width: 99%;
   height: 38%;
-  background-color: blue;
+  background-color: #494949;
+  border-radius: 10px;
+  border: 2px dashed white;
 }
 body main div#hud section#hud-logs {
   width: 69%;
   height: 96%;
-  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main div#hud section#hud-logs h1 {
+  margin: -10px 0 10px 0;
+  text-align: center;
+}
+body main div#hud section#hud-logs ul {
+  width: 95%;
+  height: 80%;
+  list-style: square;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar {
+  width: 5px;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+body main div#hud section#hud-logs ul li p {
+  padding: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
 }
 body main div#hud section#hud-menu {
   width: 29%;
   height: 96%;
-  background-color: purple;
 }
 body main div#hud section#hud-menu h1 {
   margin: 10px;

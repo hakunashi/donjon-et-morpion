@@ -137,15 +137,44 @@ body
             align-items: center
             width: 99%
             height: 38%
-            background-color: blue
+            background-color: #494949
+            border-radius: 10px
+            border: 2px dashed white
             section#hud-logs
                 width: 69%
                 height: 96%
-                background-color: orange
+                display: flex
+                flex-direction: column
+                align-items: center
+                justify-content: center
+                // background-color: orange
+                h1
+                    margin: -10px 0 10px 0
+                    text-align: center
+                ul
+                    width: 95%
+                    height: 80%
+                    list-style: square
+                    overflow: scroll
+                    overflow-x: hidden
+                    &::-webkit-scrollbar
+                        width: 5px
+                    &::-webkit-scrollbar-track
+                        background: #f1f1f1
+                        border-radius: 10px
+                    &::-webkit-scrollbar-thumb
+                        background: #333333
+                        border-radius: 10px
+                    li
+                        p
+                            padding: 10px
+                            font-size: 12px
+                            line-height: 20px
+                            color: white
             section#hud-menu
                 width: 29%
                 height: 96%
-                background-color: purple
+                // background-color: purple
                 h1
                     margin: 10px
                     text-align: center
