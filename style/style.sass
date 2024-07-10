@@ -10,6 +10,8 @@ h1
 a
     text-decoration: none
     color: white
+ul
+    list-style: none
 
 body
     font-family: 'Public Pixel', sans-serif
@@ -35,10 +37,50 @@ body
                 width: 49%
                 height: 97%
                 display: flex
-                align-items: center
-                justify-content: center
+                flex-direction: column
                 background-color: green
+                div#ally-hud
+                    // width: 400px
+                    height: 50px
+                    margin: 10px
+                    display: flex
+                    align-items: center
+                    background-color: blueviolet
+                    border-radius: 5px
+                    div#pv
+                        width: 40%
+                        display: flex
+                        align-items: center
+                        justify-content: space-around
+                        div#health
+                            display: flex
+                            img
+                                width: 20px
+                                margin-right: 5px
+                        div#mana
+                            display: flex
+                            img
+                                width: 20px
+                                margin-right: 5px
+                    div#status
+                        width: 60%
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        ul
+                            width: 100%
+                            display: flex
+                            justify-content: space-around
+                            align-items: center
+                            background-color: red
+                            margin: 50px
+                            padding: 10px
+                            border-radius: 5px
+                            p
+                                font-size: 14px
                 div#perso1
+                    margin: 0 auto
+                    margin-top: 15vh
                     width: 180px
                     height: 300px
                     background-color: #333333
@@ -75,7 +117,6 @@ body
                     justify-content: center
                     text-align: center
                     grid-template-columns: 1fr 1fr
-                    list-style: none
                     li
                         a
                             padding: 20px
