@@ -42,7 +42,7 @@ function addLog(message) {
   p.textContent = message;
 
   li.appendChild(p);
-  HUD_LOGS.appendChild(li);
+  HUD_LOGS.prepend(li);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
