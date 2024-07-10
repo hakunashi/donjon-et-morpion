@@ -38,21 +38,22 @@ body main div#sprite-section {
   align-items: center;
   width: 99%;
   height: 58%;
-  background-color: red;
+  background-image: url("../imgs/bg.webp");
+  background-size: cover;
+  background-position: bottom;
 }
 body main div#sprite-section section#ally-side {
   width: 49%;
   height: 97%;
   display: flex;
   flex-direction: column;
-  background-color: green;
 }
 body main div#sprite-section section#ally-side div#ally-hud {
   height: 50px;
   margin: 10px;
   display: flex;
   align-items: center;
-  background-color: blueviolet;
+  border: 2px solid white;
   border-radius: 5px;
 }
 body main div#sprite-section section#ally-side div#ally-hud div.pv {
@@ -60,13 +61,15 @@ body main div#sprite-section section#ally-side div#ally-hud div.pv {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: white;
 }
 body main div#sprite-section section#ally-side div#ally-hud div.pv div.health {
   display: flex;
 }
-body main div#sprite-section section#ally-side div#ally-hud div.pv div.health img {
+body main div#sprite-section section#ally-side div#ally-hud div.pv div.health img#health-hearth {
   width: 20px;
   margin-right: 5px;
+  animation: pulse 1s infinite;
 }
 body main div#sprite-section section#ally-side div#ally-hud div.pv div#mana {
   display: flex;
@@ -74,6 +77,7 @@ body main div#sprite-section section#ally-side div#ally-hud div.pv div#mana {
 body main div#sprite-section section#ally-side div#ally-hud div.pv div#mana img {
   width: 20px;
   margin-right: 5px;
+  animation: shake 1.5s infinite;
 }
 body main div#sprite-section section#ally-side div#ally-hud div#status {
   width: 60%;
@@ -86,13 +90,14 @@ body main div#sprite-section section#ally-side div#ally-hud div#status ul {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  background-color: red;
+  background-color: #333333;
   margin: 50px;
   padding: 10px;
   border-radius: 5px;
 }
 body main div#sprite-section section#ally-side div#ally-hud div#status ul p {
   font-size: 14px;
+  color: white;
 }
 body main div#sprite-section section#ally-side div#perso1 {
   margin: 0 auto;
@@ -101,22 +106,23 @@ body main div#sprite-section section#ally-side div#perso1 {
   height: 300px;
   background-color: #333333;
   border-radius: 95%;
-  animation: slide-in 5s forwards, bounce 1.5s 5s infinite;
+  animation: slide-in-perso-1 5s forwards, bounce-player-1 1.5s 5s infinite;
 }
 body main div#sprite-section section#enemy-side {
   width: 49%;
   height: 97%;
   display: flex;
   flex-direction: column;
-  background-color: yellow;
 }
 body main div#sprite-section section#enemy-side div#enemy-hud {
   width: 40%;
   height: 50px;
-  margin: 10px auto;
+  margin-top: 10px;
+  margin-left: 28.5vw;
   display: flex;
   align-items: center;
-  background-color: blueviolet;
+  justify-content: right;
+  border: 2px solid white;
   border-radius: 5px;
 }
 body main div#sprite-section section#enemy-side div#enemy-hud div.pv {
@@ -124,13 +130,24 @@ body main div#sprite-section section#enemy-side div#enemy-hud div.pv {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  color: white;
 }
 body main div#sprite-section section#enemy-side div#enemy-hud div.pv div.health {
   display: flex;
 }
-body main div#sprite-section section#enemy-side div#enemy-hud div.pv div.health img {
+body main div#sprite-section section#enemy-side div#enemy-hud div.pv div.health img#health-hearth {
   width: 20px;
   margin-right: 5px;
+  animation: pulse 1s infinite;
+}
+body main div#sprite-section section#enemy-side div#perso2 {
+  margin: 0 auto;
+  margin-top: 15vh;
+  width: 180px;
+  height: 300px;
+  background-color: #333333;
+  border-radius: 95%;
+  animation: slide-in-perso-2 5s forwards, bounce-player-2 1.5s 5s infinite;
 }
 body main div#hud {
   display: flex;
@@ -138,17 +155,49 @@ body main div#hud {
   align-items: center;
   width: 99%;
   height: 38%;
-  background-color: blue;
+  background-color: #494949;
+  border-radius: 10px;
+  border: 2px dashed white;
 }
 body main div#hud section#hud-logs {
   width: 69%;
   height: 96%;
-  background-color: orange;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+body main div#hud section#hud-logs h1 {
+  margin: -10px 0 10px 0;
+  text-align: center;
+}
+body main div#hud section#hud-logs ul {
+  width: 95%;
+  height: 80%;
+  list-style: square;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar {
+  width: 5px;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+body main div#hud section#hud-logs ul::-webkit-scrollbar-thumb {
+  background: #333333;
+  border-radius: 10px;
+}
+body main div#hud section#hud-logs ul li p {
+  padding: 10px;
+  font-size: 12px;
+  line-height: 20px;
+  color: white;
 }
 body main div#hud section#hud-menu {
   width: 29%;
   height: 96%;
-  background-color: purple;
 }
 body main div#hud section#hud-menu h1 {
   margin: 10px;
@@ -175,9 +224,17 @@ body main div#hud section#hud-menu ul li a:hover {
   border: 2px dashed white;
 }
 
-@keyframes slide-in {
+@keyframes slide-in-perso-1 {
   0% {
     transform: translateX(-50vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+@keyframes slide-in-perso-2 {
+  0% {
+    transform: translateX(50vw);
   }
   100% {
     transform: translateX(0);
@@ -192,7 +249,7 @@ body main div#hud section#hud-menu ul li a:hover {
     display: none;
   }
 }
-@keyframes bounce {
+@keyframes bounce-player-1 {
   0% {
     transform: translateX(0px);
   }
@@ -201,5 +258,50 @@ body main div#hud section#hud-menu ul li a:hover {
   }
   100% {
     transform: translateX(0px);
+  }
+}
+@keyframes bounce-player-2 {
+  0% {
+    transform: translateX(0px);
+  }
+  50% {
+    transform: translateX(15px);
+  }
+  100% {
+    transform: translateX(0px);
+  }
+}
+@keyframes pulse {
+  0% {
+    scale: 1;
+  }
+  50% {
+    scale: 1.1;
+  }
+  100% {
+    scale: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: rotate(0deg);
+  }
+  15% {
+    transform: rotate(10deg);
+  }
+  25% {
+    transform: rotate(-10deg);
+  }
+  35% {
+    transform: rotate(10deg);
+  }
+  45% {
+    transform: rotate(-10deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(0deg);
   }
 }/*# sourceMappingURL=style.css.map */
