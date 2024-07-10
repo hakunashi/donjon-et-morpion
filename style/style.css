@@ -47,10 +47,9 @@ body main div#sprite-section section#ally-side {
 body main div#sprite-section section#ally-side div#perso1 {
   width: 180px;
   height: 300px;
-  margin-left: -130%;
   background-color: #333333;
   border-radius: 95%;
-  animation: slide-in 5s forwards, bounce 5s forwards infinite;
+  animation: slide-in 5s forwards, bounce 1.5s 5s infinite;
 }
 body main div#sprite-section section#enemy-side {
   width: 49%;
@@ -103,10 +102,10 @@ body main div#hud section#hud-menu ul li a:hover {
 
 @keyframes slide-in {
   0% {
-    transform: translateX(-130%);
+    transform: translateX(-50vw);
   }
   100% {
-    transform: translateX(300%);
+    transform: translateX(0);
   }
 }
 @keyframes slide-out {
@@ -120,12 +119,12 @@ body main div#hud section#hud-menu ul li a:hover {
 }
 @keyframes bounce {
   0% {
-    transform: translateX(10px);
+    transform: translateX(0px);
   }
   50% {
-    transform: translateX(-10px);
+    transform: translateX(-15px);
   }
   100% {
-    transform: translateX(10px);
+    transform: translateX(0px);
   }
 }/*# sourceMappingURL=style.css.map */
