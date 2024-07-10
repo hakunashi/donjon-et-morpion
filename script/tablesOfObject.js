@@ -1,6 +1,9 @@
+import { Character } from "./class/Character.js";
 import { Ally } from "./class/Ally.js";
+import { Ennemy } from "./class/Ennemy.js";
 import { Item } from "./class/Item.js";
 import { Skill } from "./class/Skill.js";
+import { State } from "./class/State.js";
 
 export const ITEMS = {
   "potion de soin": new Item("Rend un montant de pv", "PV", 30),
