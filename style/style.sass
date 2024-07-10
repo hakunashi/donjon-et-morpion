@@ -40,19 +40,18 @@ body
                 flex-direction: column
                 background-color: green
                 div#ally-hud
-                    // width: 400px
                     height: 50px
                     margin: 10px
                     display: flex
                     align-items: center
                     background-color: blueviolet
                     border-radius: 5px
-                    div#pv
+                    div.pv
                         width: 40%
                         display: flex
                         align-items: center
                         justify-content: space-around
-                        div#health
+                        div.health
                             display: flex
                             img
                                 width: 20px
@@ -90,7 +89,27 @@ body
             section#enemy-side
                 width: 49%
                 height: 97%
+                display: flex
+                flex-direction: column
                 background-color: yellow
+                div#enemy-hud
+                    width: 40%
+                    height: 50px
+                    margin: 10px auto
+                    display: flex
+                    align-items: center
+                    background-color: blueviolet
+                    border-radius: 5px
+                    div.pv
+                        width: 100%
+                        display: flex
+                        align-items: center
+                        justify-content: space-around
+                        div.health
+                            display: flex
+                            img
+                                width: 20px
+                                margin-right: 5px
         div#hud
             display: flex
             justify-content: space-evenly
