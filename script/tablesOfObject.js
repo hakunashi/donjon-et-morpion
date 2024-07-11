@@ -19,13 +19,13 @@ export const SKILLS = {
 
 export const MAIN = new Ally(
   "./img",
-  "Basile",
+  "Joueur 1",
   {
     PV: 100,
     actualPV: 100,
     mana: 50,
     actualMana: 50,
-    atk: 16,
+    atk: 20,
     def: 5,
     spd: 11,
   },
@@ -38,11 +38,11 @@ export const MAIN = new Ally(
 
 export const ENEMY = new Enemy(
   "./img",
-  "Isaac",
+  "Isaac Zoubidou",
   {
     PV: 140,
     actualPV: 140,
-    atk: 5,
+    atk: 12,
     def: 7,
     spd: 8,
   },

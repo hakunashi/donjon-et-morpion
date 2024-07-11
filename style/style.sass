@@ -36,6 +36,7 @@ body
             background-size: cover
             background-position: bottom
             section#ally-side
+                position: relative
                 width: 49%
                 height: 97%
                 display: flex
@@ -85,15 +86,26 @@ body
                                 font-size: 14px
                                 color: white
                 div#perso1
-                    margin: 0 auto
-                    margin-top: 15vh
-                    width: 180px
-                    height: 300px
-                    background-color: #333333
+                    position: absolute
+                    left: 30%
+                    bottom: -45px
+                    height: 400px
+                    width: 500px
+                    // background-color: #333333
+                    background-image: url("../imgs/perso1.png")
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-position: center
                     border-radius: 95%
-                    animation: slide-in-perso-1 5s forwards, bounce-player-1 1.5s 5s infinite
-                    // animation: slide-out 5s forwards
+                    animation: bounce-player-1 1.5s infinite
+                    &.victory
+                        animation: slide-out 3.5s 1.5s forwards
+                    &.takeDamage
+                        animation: take-damage 1s
+                    &.arrive-perso1
+                        animation: slide-in-perso-1 5s
             section#enemy-side
+                position: relative
                 width: 49%
                 height: 97%
                 display: flex
@@ -123,16 +135,26 @@ body
                                 margin-right: 5px
                                 animation: pulse 1s infinite
                 div#perso2
-                    margin: 0 auto
-                    margin-top: 15vh
-                    width: 180px
-                    height: 300px
-                    background-color: #333333
+                    position: absolute
+                    left: 30%
+                    bottom: -135px
+                    width: 500px
+                    height: 650px
+                    background-image: url("../imgs/perso2.png")
+                    background-size: contain
+                    background-repeat: no-repeat
+                    background-position: center
+                    // background-color: #333333
                     border-radius: 95%
-                    animation: slide-in-perso-2 5s forwards, bounce-player-2 1.5s 5s infinite
+                    animation: bounce-player-2 1.5s infinite
                     // animation: slide-out 5s forwards
+                    &.die
+                        animation: die-player-2 3s forwards
+                    &.takeDamage
+                        animation: take-damage 1s
         div#hud
             display: flex
+            z-index: 1
             justify-content: space-evenly
             align-items: center
             width: 99%
@@ -147,7 +169,10 @@ body
                 flex-direction: column
                 align-items: center
                 justify-content: center
+                transition: all ease-in-out 0.5s
                 // background-color: orange
+                &.full-screen
+                    width: 100%
                 h1
                     margin: -10px 0 10px 0
                     text-align: center
@@ -175,6 +200,9 @@ body
                 width: 29%
                 height: 96%
                 // background-color: purple
+                &.hidden
+                    width: 0
+                    display: none
                 h1
                     margin: 10px
                     text-align: center
@@ -187,13 +215,20 @@ body
                     text-align: center
                     grid-template-columns: 1fr 1fr
                     li
-                        a
+                        button
                             padding: 20px
                             background-color: #333333
+                            color: white
+                            font-family: 'Public Pixel', sans-serif
+                            cursor: pointer
                             border-radius: 10px
                             border: 2px solid white
                             transition: all ease 0.5s
-                        a:hover
+                            &.disabled, &.disabled:hover
+                                cursor: default
+                                background-color: #0000001e
+                                border: none
+                        button:hover
                             background-color: #636363
                             border: 2px dashed white
 
@@ -201,12 +236,12 @@ body
     0%
         transform: translateX(-50vw)
     100%
-        transform: translateX(0)
+        transform: translateX(0vw)
 @keyframes slide-in-perso-2
     0%
         transform: translateX(50vw)
     100%
-        transform: translateX(0)
+        transform: translateX(0vw)
 @keyframes slide-out
     0%
         transform: translateX(0%)
@@ -227,6 +262,16 @@ body
         transform: translateX(15px)
     100%
         transform: translateX(0px)
+@keyframes die-player-2
+    0%
+        transform: rotate(0deg) translateX(0)
+        opacity: 1
+    50%
+        transform: rotate(90deg) translateX(90px)
+        opacity: 1
+    100%
+        transform: rotate(90deg) translateX(90px)
+        opacity: 0
 @keyframes pulse
     0%
         scale: 1
@@ -249,3 +294,14 @@ body
         transform: rotate(0deg)
     100%
         transform: rotate(0deg)
+@keyframes take-damage
+    0%
+        opacity: 1
+    25%
+        opacity: 0
+    50%
+        opacity: 1
+    75%
+        opacity: 0
+    100%
+        opacity: 1

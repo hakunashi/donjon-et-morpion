@@ -7,9 +7,20 @@ export class Skill {
   }
 
   makeDamage(atk) {
-    return Math.floor(
+    let tirage = Math.floor((Math.random() * 8) )
+
+    if (tirage === 7) {
+      console.log("coup critique")
+      return Math.floor(
       (Math.random() * (this.maxDamage - this.minDamage) + this.minDamage) *
-        (atk * 0.1)
-    );
+        (atk * 2.5 * 0.1 )
+    )
+    } else {
+      return Math.floor(
+        (Math.random() * (this.maxDamage - this.minDamage) + this.minDamage) *
+          (atk * 0.1)
+      );
+    }
+    
   }
 }

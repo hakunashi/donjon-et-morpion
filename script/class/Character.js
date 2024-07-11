@@ -9,9 +9,6 @@ export class Character {
 
   takeDamage(characterAttacker, damage) {
     this.stats.actualPV = this.stats.actualPV - damage;
-    console.log(
-      `${characterAttacker.name} attaque ${this.name} et lui inflige ${damage}, PV de ${this.name}: ${this.stats.actualPV}/${this.stats.PV}`
-    );
     if (this.stats.actualPV < 0) {
       this.status.push("dead");
     }
