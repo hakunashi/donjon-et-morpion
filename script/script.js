@@ -75,7 +75,14 @@ function displayKoScreen() {
     displayPVEnemy();
     MAIN_PLAYER.classList.add("victory");
     SECONDARY_PLAYER.classList.add("die");
+    setTimeout(() => {
+      displayVictoryScreen();
+    }, 4000)
   }
+}
+
+function displayVictoryScreen() {
+  DOM_MAIN.innerHTML = "<h1>Vous avez gagné !</h1> <a href='index.html'>Relancer une partie</a>";
 }
 
 setTimeout(() => {
